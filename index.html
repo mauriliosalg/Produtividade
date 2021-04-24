@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" href="style.css"/>
+    <script src="https://kit.fontawesome.com/214eb976d5.js" crossorigin="anonymous"></script>
+    <title>Produtividade</title>
+</head>
+<body id="status" onload='escrever()'>
+    <header>
+        <h1>Pomodoro da Gatinha</h1>
+    </header> 
+    <section>
+        
+        <div class="modes" id='modes'>
+            
+            <button data-mode="foco" data-txt="Hora de Trabalhar Forte!" class="bmodes active" id="pomodoro"  onclick="changeMode()">Pomodoro</button>
+            <button data-mode="shortBreak" data-txt="Que tal uma esticada?" class="bmodes" id="sbreak"  onclick="changeMode()">Pequeno Descanso</button>
+            <button data-mode="longBreak" data-txt="Vai fazer outra coisa!" class="bmodes" id="lbreak"  onclick="changeMode()">Relaxa Bastante</button> 
+        </div>
+            
+        <div class="triggerMenu">
+            <span>
+                <i class="fas fa-cog" id="iconfig" onclick="abreMenu()"></i>
+            </span>
+            <span>
+                <h2 id="msg">
+                    Hora de Trabalhar Forte
+                </h2>
+            </span>
+        </div>
+            <div class="config" data-aberto="true">
+                
+                <form class="fconfig" action="/config" method="POST">
+                    <div>
+                        <label for="configPomodoro">Quanto tempo você quer focar(em minutos)? </label>
+                        <input type="number" id="configPomodoro" name="usrPomodoro" placeholder="25">
+                    </div>
+                    <div>
+                        <label for="configShort">Tempo do intervalinho (em minutos):</label>
+                        <input type="number" id="configShort" name="usrShort"
+                        placeholder="5" value="5">
+                    </div>
+                    <div>
+                        <label for="configLong">Tempo do intervalão (em minutos):</label>
+                        <input type="number" id="configLong" name="usrLong" placeholder="15">
+                    </div>
+                    <div>
+                        <label for="configPeriodo">Número de ciclos pomodoro até intervalão:</label>
+                        <input type="number" id="configPeriodo"name="usrPeriodo"  placeholder="4">
+                    </div>
+                    <div>
+                        <input type="button" value="Finalizar" class="bmenu" onclick="finalizar()">
+                        <input type="button" value="Padrão Original" class="bmenu" onclick="voltaPadrao()">
+                    </div>
+                </form>
+            </div>
+       
+
+        <div class="clock" id='clock'>
+            <div class="display">
+                <div class="relogio" id="relogio">
+                </div>
+            </div>
+            <div class='botoes' id='ctrl'>
+                <input type="button" class="controles" id="power" value="INICIAR" onclick="power()"/>
+                <!--
+                <input type="button" class="controles" id="pause" value="PAUSAR" onclick="pausar()"/>
+                -->
+                <input type="button" class="controles" id="zero" value="ZERAR" onclick="zerar()"/>
+            </div>
+        </div>
+    </section>
+    <audio id="alarme" controls="controls">
+        <source src="Alarm-Fast-High-Pitch-A1.mp3" type="audio/mpeg"/>
+    </audio>
+</body>
+<script src="cronometro.js"></script>
+<footer>
+    <p>&copy; DevMau</p>
+</footer>
+</html>

@@ -1,0 +1,142 @@
+
+:root {
+    --foco: rgba(8, 169, 218, 0.6);
+    --shortBreak: #c50f8e99;
+    --longBreak: #f04c2399;
+    --pause_color:  #4ce75999;
+    --shadow: rgba(0, 0, 0, 0.39);
+}
+
+body {
+    background: var(--foco);
+    font: normal 15pt Arial;
+}
+
+header {
+    color: white;
+    text-align: center;
+}
+
+section {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.39);
+    text-align: center;
+
+}
+.config {
+    position: relative;
+    left: 0px;
+    visibility: hidden;
+}
+
+.triggerMenu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+i#iconfig{
+    cursor: pointer;
+}
+.fconfig {
+
+    position: absolute;
+    margin: 0 auto;
+    width: 520px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.39);
+    padding: 15px;
+    background-color: rgba(8, 169, 218, 0.99);
+}
+.fconfig > div {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.bmenu {
+    text-align: center;
+    padding: 5px;
+    font-size: medium;
+    width: 150px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.39);
+}
+
+label {
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+    width: 440px;
+    text-align: right;
+}
+input {
+    width: 60px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #999;
+}
+input:focus {
+    border-color: #000;
+}
+
+audio {
+    display: none;
+}
+.display{
+    display: table;
+    margin: 20px auto 20px auto;
+    padding: 15px;
+    font: normal 45pt Arial;
+}
+.min{
+    display: table-cell;
+}
+.sec{
+    display: table-cell;
+}
+.bmodes {
+    text-align: center;
+    padding: 5px;
+    font-size: medium;
+    width: 150px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.39);
+}
+.botoes {
+    text-align: center;
+}
+.controles {
+    padding: 10px;
+    font-size: large;
+    width: 100px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.39);
+}
+button#pomodoro {
+    background: var(--foco);
+}
+button#sbreak {
+    background: var(--shortBreak);
+}
+button#lbreak {
+    background: var(--longBreak);
+}
+input#power {
+    background: var(--foco);
+}
+input#zero {
+    background:white;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
